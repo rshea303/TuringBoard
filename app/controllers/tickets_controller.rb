@@ -1,8 +1,5 @@
 class TicketsController < ApplicationController
   def create
-     
-    require "pry"
-    binding.pry
     ticket = Ticket.new(ticket_params)
     if ticket.save
       redirect_to :back
