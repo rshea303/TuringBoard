@@ -1,0 +1,15 @@
+<div class="row ticket-style">
+  <p>Title: <%= ticket.title %></p>
+  <p>Description: <%= ticket.description %></p>
+  <% if ticket.status == "backlog" %>
+    <%= link_to "move to current_sprint", board_ticket_path(board.id, ticket.id, send: "cs"), method: :put %>
+  <% elsif ticket.status == "current sprint" %>
+    <%= button_to "move to backlog", board_ticket_path(board.id, ticket.id, send: "bl"), method: :put %>
+    <%= button_to "move to in progress", board_ticket_path(board.id, ticket.id, send: "ip"), method: :put %>
+  <% elsif ticket.status == "in progress" %>
+    <%= button_to "move to current sprint", board_ticket_path(@board.id, ticket.id, send: "cs"), method: :put %>
+    <%= button_to "move to done", board_ticket_path(board.id, ticket.id, send: "do"), method: :put %>
+  <% else %>
+    <%= button_to "move to in progress", board_ticket_path(board.id, ticket.id, "ip"), method: :put %>
+  <% end %>
+</div>

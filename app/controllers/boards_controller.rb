@@ -5,6 +5,10 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.find(params[:id])
+    @backlog_tickets = @board.tickets.where(status: "backlog")
+    @current_sprint_tickets = @board.tickets.where(status: "current sprint")
+    @in_progress_tickets = @board.tickets.where(status: "in progress")
+    @done_tickets = @board.tickets.where(status: "done")
   end
 
   def new

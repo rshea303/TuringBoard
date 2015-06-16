@@ -13,7 +13,11 @@
         Backlogs
       </div>
       <div class="row">
-        tickets
+        <ul>
+          <%= @backlog_tickets.each do |ticket| %>
+            <%= render :partial => 'shared/ticket_form', :locals =>  {:board => @board, :ticket => ticket} %>
+          <% end %>
+        </ul>
       </div>
     </div>
     <div class="col-xs-3 statuses">
@@ -21,7 +25,11 @@
         Current Sprint
       </div>
       <div class="row">
-        tickets
+        <ul>
+          <%= @current_sprint_tickets.each do |ticket| %>
+            <%= render :partial => 'shared/ticket_form', :locals =>  {:board => @board, :ticket => ticket} %>
+          <% end %>
+        </ul>
       </div>
     </div>
     <div class="col-xs-3 statuses">
@@ -29,7 +37,11 @@
         In Progress
       </div>
       <div class="row">
-        tickets
+        <ul>
+          <%= @in_progress_tickets.each do |ticket| %>
+            <%= render :partial => 'shared/ticket_form', :locals =>  {:board => @board, :ticket => ticket} %>
+          <% end %>
+        </ul>
       </div>
     </div>
     <div class="col-xs-3 statuses">
@@ -37,7 +49,11 @@
         Done
       </div>
       <div class="row">
-        tickets
+        <ul>
+          <%= @done_tickets.each do |ticket| %>
+            <%= render :partial => 'shared/ticket_form', :locals =>  {:board => @board, :ticket => ticket} %>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
