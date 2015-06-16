@@ -18,4 +18,13 @@ RSpec.describe Ticket, type: :model do
     
     expect(ticket.status).to eq("backlog")
   end
+  
+  it "can update status" do
+    ticket = Ticket.new(title: "new ticket")
+    
+    expect(ticket.status).to eq("backlog")
+
+    ticket.update(status: "current sprint")
+    expect(ticket.status).to eq("current sprint")
+  end
 end
