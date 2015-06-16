@@ -12,4 +12,10 @@ RSpec.describe Ticket, type: :model do
 
     expect(ticket).not_to be_valid
   end
+
+  it "has default status of backlog" do
+    ticket = Ticket.new(title: "new ticket")
+    
+    expect(ticket.status).to eq("backlog")
+  end
 end
