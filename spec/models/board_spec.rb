@@ -12,4 +12,11 @@ RSpec.describe Board, type: :model do
 
     expect(board).not_to be_valid
   end
+
+  it "has tickets" do
+    board = Board.create(title: "Title")
+    board.tickets.create(title: "new ticket", description: "desc for new ticket", status: "backlog") 
+
+    expect(board.tickets.first.title).to eq("new ticket")
+  end
 end
