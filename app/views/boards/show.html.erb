@@ -22,7 +22,7 @@
       </div>
       <div class="row">
         <ul>
-          <%= @backlog_tickets.each do |ticket| %>
+          <% @backlog_tickets.each do |ticket| %>
             <%= render :partial => 'shared/ticket_form', :locals =>  {:board => @board, :ticket => ticket} %>
           <% end %>
         </ul>
@@ -34,7 +34,7 @@
       </div>
       <div class="row">
         <ul>
-          <%= @current_sprint_tickets.each do |ticket| %>
+          <% @current_sprint_tickets.each do |ticket| %>
             <%= render :partial => 'shared/ticket_form', :locals =>  {:board => @board, :ticket => ticket} %>
           <% end %>
         </ul>
@@ -46,7 +46,7 @@
       </div>
       <div class="row">
         <ul>
-          <%= @in_progress_tickets.each do |ticket| %>
+          <% @in_progress_tickets.each do |ticket| %>
             <%= render :partial => 'shared/ticket_form', :locals =>  {:board => @board, :ticket => ticket} %>
           <% end %>
         </ul>
@@ -58,7 +58,7 @@
       </div>
       <div class="row">
         <ul>
-          <%= @done_tickets.each do |ticket| %>
+          <% @done_tickets.each do |ticket| %>
             <%= render :partial => 'shared/ticket_form', :locals =>  {:board => @board, :ticket => ticket} %>
           <% end %>
         </ul>
