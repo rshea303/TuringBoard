@@ -1,8 +1,44 @@
-<div class="row">
-  <div class="col-xs-4">
-    Project: <%= @board.title %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4">
+      Project: <%= @board.title %>
+    </div>
+    <div class="col-xs-8">
+      Form for new ticket
+    </div>
   </div>
-  <div class="col-xs-8">
-    Form for new ticket
+  <div class="row">
+    <div class="col-xs-3 statuses">
+      <div class="row">
+        Backlogs
+      </div>
+      <div class="row">
+        tickets
+      </div>
+    </div>
+    <div class="col-xs-3 statuses">
+      <div class="row">
+        Current Sprint
+      </div>
+      <div class="row">
+        tickets
+      </div>
+    </div>
+    <div class="col-xs-3 statuses">
+      <div class="row">
+        In Progress
+      </div>
+      <div class="row">
+        tickets
+      </div>
+    </div>
+    <div class="col-xs-3 statuses">
+      <div class="row">
+        Done
+      </div>
+      <div class="row">
+        tickets
+      </div>
+    </div>
   </div>
 </div>
