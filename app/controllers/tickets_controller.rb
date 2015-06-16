@@ -1,4 +1,14 @@
 class TicketsController < ApplicationController
+  def create
+     
+    require "pry"
+    binding.pry
+    ticket = Ticket.new(ticket_params)
+    if ticket.save
+      redirect_to :back
+    end
+  end
+
   def update 
     receiver = params[:send]
     ticket = Ticket.find(params[:id])
@@ -13,5 +23,11 @@ class TicketsController < ApplicationController
     end
     ticket.save
     redirect_to :back
+  end
+
+  private
+
+  def ticket_params
+    params.require(:ticket).permit(:title, :description, :status)
   end
 end

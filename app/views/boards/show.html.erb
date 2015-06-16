@@ -4,7 +4,15 @@
       Project: <%= @board.title %>
     </div>
     <div class="col-xs-8">
-      Form for new ticket
+      <%= form_for @ticket do |f| %>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+        <%= f.label :status %>
+        <%= f.text_field :status %>
+        <%= f.submit "Add New Ticket" %>
+      <% end %>
     </div>
   </div>
   <div class="row">
